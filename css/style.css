@@ -1,0 +1,321 @@
+    html {
+        font-size: 15px;
+        box-sizing: border-box;
+        --primarydark: #2B7DED;
+        --primarylight: #fff;
+        --secondarydark: rgb(101, 176, 247);
+        --secondarylight: #FFFFFF;
+    }
+    
+    *,
+     ::before,
+     ::after {
+        box-sizing: inherit;
+    }
+    
+    body {
+        margin: 0;
+        background-color: var(--primarylight);
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0;
+    }
+    
+    p {
+        margin: 0 0 10px;
+    }
+    
+    .container {
+        width: 100%;
+        margin: 0 auto;
+        max-width: 1030px;
+        padding: 0 1rem;
+    }
+    /* page */
+    
+    .page {
+        width: 100%;
+        height: 100vh;
+        min-height: 770px;
+        background: #000 url(../img/bg.jpg) no-repeat center;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+    }
+    /* header */
+    
+    .header {
+        background: var(--primarydark);
+        padding: 1rem 0;
+    }
+    
+    .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .header-brand {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--primarylight);
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+    /* убираем отступ у логотипа, т.е. встроенные стили*/
+    
+    .header-logo img {
+        display: block;
+    }
+    
+    .header-nav-link {
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--primarylight);
+        text-decoration: none;
+        transition: color 0.2s linear;
+    }
+    
+    .header-nav a+a {
+        margin-left: 1.5rem;
+    }
+    
+    .header-nav-link:hover {
+        color: var(--secondarydark);
+    }
+    
+    .header-nav-link.is-active {
+        position: relative;
+    }
+    
+    .header-nav-link.is-active::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: var(--primarylight);
+        left: 0;
+        bottom: -5px;
+    }
+    /* content */
+    
+    .content {
+        width: 100%;
+        max-width: 37.6rem;
+        margin-top: 7.3333rem;
+    }
+    
+    .subtitle {
+        font-size: 1.4rem;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.6);
+        line-height: 1.4;
+    }
+    
+    .title {
+        margin-bottom: 2.4rem;
+        font-size: 2rem;
+        font-weight: 500;
+        color: var(--primarylight);
+        line-height: 1.2;
+    }
+    
+    .title>span {
+        color: var(--primarydark);
+    }
+    
+    .text {
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--primarylight);
+        margin-bottom: 3.3333rem;
+    }
+    /* button */
+    
+    .btn {
+        display: inline-block;
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--primarylight);
+        text-decoration: none;
+        background-color: var(--primarydark);
+        padding: 0.6rem 2.3rem;
+        border-radius: 5px;
+        transition: background-color 0.2s linear;
+    }
+    
+    .btn:hover {
+        background-color: var(--secondarydark);
+    }
+    
+    .btn.btn--submit {
+        width: 100%;
+        border: none;
+        outline: none;
+    }
+    /* author-foto */
+    
+    .author {
+        position: absolute;
+        right: 1.3rem;
+        bottom: 0;
+    }
+    /* footer */
+    
+    .footer {
+        width: 100%;
+        position: absolute;
+        bottom: 3rem;
+        left: 0;
+    }
+    /* contacts */
+    
+    .contacts-link {
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--primarylight);
+        text-decoration: none;
+    }
+    
+    .contacts-link:hover {
+        text-decoration: underline;
+    }
+    
+    .contacts a+a {
+        margin-left: 1.5rem;
+    }
+    
+    .contacts-icon {
+        margin-right: 0.3rem;
+    }
+    
+    .contacts-link:last-child {
+        position: relative;
+    }
+    
+    .contacts-link:last-child::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 5.3333rem;
+        height: 2px;
+        background-color: var(--primarylight);
+        left: 100%;
+        top: 10px;
+        margin-left: 31px;
+    }
+    /* contacts page */
+    
+    .title.title--contacts {
+        margin-bottom: 0.5rem;
+    }
+    
+    .text.text--contacts {
+        margin-bottom: 2.3333rem;
+    }
+    /* form */
+    
+    .form {
+        width: 280px;
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--primarylight);
+    }
+    
+    .input-form {
+        width: 100%;
+        height: 35px;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        background: rgba(255, 255, 255, .2);
+        color: var(--primarylight);
+        letter-spacing: 1px;
+        outline: none;
+    }
+    
+    .input-form.input-form--textarea {
+        min-height: 100px;
+        resize: none;
+    }
+    /* media */
+    /* меньше чем портретная ориентация айпада */
+    
+    @media (max-width: 1000px) {
+        .author {
+            right: -180px;
+        }
+    }
+    
+    @media (max-width: 767px) {
+        .page {
+            min-height: 100vh;
+            height: auto;
+            padding-bottom: 1rem;
+        }
+        .header-logo {
+            display: none;
+        }
+        .header-brand {
+            font-size: 1.2rem;
+        }
+        .content {
+            margin-top: 3.3333rem;
+            margin-bottom: 3.3333rem;
+            max-width: none;
+        }
+        .form {
+            margin: 0 auto;
+        }
+        .footer {
+            position: static;
+        }
+        .author {
+            display: none;
+        }
+    }
+    
+    @media (max-width: 565px) {
+        /* content  */
+        .content {
+            text-align: center;
+        }
+        /* header  */
+        .header-inner {
+            flex-direction: column;
+        }
+        /* contacts  */
+        .contacts {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .contacts-link:last-child::after {
+            display: none;
+        }
+        .contacts a+a {
+            margin-left: 0rem;
+        }
+        .contacts>a:first-child {
+            margin-bottom: 0.5rem;
+        }
+    }
+    
+    @media (max-width: 320px) {
+        .title {
+            font-size: 1.6rem;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+        }
+    }
